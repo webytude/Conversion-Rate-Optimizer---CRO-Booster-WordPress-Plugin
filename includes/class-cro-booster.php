@@ -57,6 +57,15 @@ class Cro_Booster {
 	protected $version;
 
 	/**
+	 * The saved options of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $cro_options    The saved options of this plugin.
+	 */
+	private $cro_options;
+
+	/**
 	 * Define the core functionality of the plugin.
 	 *
 	 * Set the plugin name and the plugin version that can be used throughout the plugin.
@@ -71,7 +80,8 @@ class Cro_Booster {
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'cro-booster';
+		$this->plugin_name = 'cro-booster';		
+		$this->cro_options = get_option($this->plugin_name);
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -146,11 +156,6 @@ class Cro_Booster {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'tools/class-header-promotional-bar-button.php';
 
-
-		/**
-		 * The class responsible for defining all actions that occur in the header promotional bar With Button
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'tools/class-header-promotional-bar-button-test.php';
 
 
 		$this->loader = new Cro_Booster_Loader();
@@ -247,6 +252,16 @@ class Cro_Booster {
 	 */
 	public function get_version() {
 		return $this->version;
+	}
+
+	/**
+	 * Retrieve the options of the plugin.
+	 *
+	 * @since     1.0.0
+	 * @return    string    The options of the plugin.
+	 */
+	public function get_cro_options() {
+		return $this->cro_options;
 	}
 
 }

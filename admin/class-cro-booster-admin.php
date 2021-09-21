@@ -225,7 +225,7 @@ class Cro_Booster_Admin {
         );
 	   */
 		
-
+        $fields = array();
         $fields = apply_filters( 'cro_options_fields', $fields);
 
 		$options_panel = new Exopite_Simple_Options_Framework( $config_menu, $fields );

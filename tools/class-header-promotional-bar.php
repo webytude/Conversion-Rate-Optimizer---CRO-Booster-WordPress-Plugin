@@ -40,68 +40,39 @@ class Cro_Booster_Header_Promotional_Bar {
 	private $version;
 
 	/**
+	 * The saved options of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $cro_options    The saved options of this plugin.
+	 */
+	private $cro_options;
+
+	/**
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
 	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	public function __construct( $plugin_name, $version, $cro_options ) {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+		$this->cro_options = $cro_options;
 
-		add_action('admin_enqueue_scripts', array($this, 'enqueue_styles'));
 		add_action('cro_options_fields', array($this, 'header_promotional_bar_fields'));
 
-	}
+		if( isset( $this->cro_options['hpb_switcher'] ) && $this->cro_options['hpb_switcher'] == "yes"){
+			if( !empty( $this->cro_options['hpb_message'] ) && !empty( $this->cro_options['hpb_bg_color'] ) && !empty( $this->cro_options['hpb_text_color'] ) ){
 
-	/**
-	 * Register the stylesheets for the Header Promotional Bar side of the site.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_styles() {
+				add_action('wp_body_open', array($this, 'header_promotional_bar_view'));
+				add_action('cro_styles', array($this, 'cro_styles'));
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Cro_Booster_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Cro_Booster_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/cro-booster-public.css', array(), $this->version, 'all' );
-
-	}
-
-	/**
-	 * Register the JavaScript for the Header Promotional Bar side of the site.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_scripts() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Cro_Booster_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Cro_Booster_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/cro-booster-public.js', array( 'jquery' ), $this->version, true );
-
-	}
-
+			}
+		}
+	} 
+	 
 	/**
 	 * Register the new field for the Header Promotional Bar side of the site.
 	 *
@@ -171,9 +142,64 @@ class Cro_Booster_Header_Promotional_Bar {
 
 	}
 
+	/**
+	 * Adding code for the Header Promotional Bar side of the site.
+	 *
+	 * @since    1.0.0
+	 */
+	public function header_promotional_bar_view() {
+
+		/**
+		 * This function is provided for demonstration purposes only.
+		 *
+		 * An instance of this class should be passed to the run() function
+		 * defined in Cro_Booster_Loader as all of the hooks are defined
+		 * in that particular class.
+		 *
+		 * The Cro_Booster_Loader will then create the relationship
+		 * between the defined hooks and the functions defined in this
+		 * class.
+		 */
+		
+		?>
+		<div class="cro-booster-hpb">
+			<div class="cro-inside"><?php _e( $this->cro_options['hpb_message'] );?></div>
+		</div>
+		<?php
+
+	}
+
+	/**
+	 * Adding code for the Header Promotional Bar side of the site.
+	 *
+	 * @since    1.0.0
+	 */
+	public function cro_styles() {
+
+		/**
+		 * This function is provided for demonstration purposes only.
+		 *
+		 * An instance of this class should be passed to the run() function
+		 * defined in Cro_Booster_Loader as all of the hooks are defined
+		 * in that particular class.
+		 *
+		 * The Cro_Booster_Loader will then create the relationship
+		 * between the defined hooks and the functions defined in this
+		 * class.
+		 */
+		?>
+			.cro-booster-hpb{
+				text-align:center;
+			    color: <?php _e($this->cro_options['hpb_text_color']);?>;
+			    background-color: <?php _e($this->cro_options['hpb_bg_color']);?>
+			}
+		<?php
+
+	}
+
 
 
 }
 
 
-new Cro_Booster_Header_Promotional_Bar( Cro_Booster::get_plugin_name(), Cro_Booster::get_version() );
+new Cro_Booster_Header_Promotional_Bar( Cro_Booster::get_plugin_name(), Cro_Booster::get_version(), Cro_Booster::get_cro_options() );

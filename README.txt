@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== CRO Booster ===
 Contributors: (this should be a list of wordpress.org userid's)
 Donate link: http://webytude.com/
 Tags: comments, spam
