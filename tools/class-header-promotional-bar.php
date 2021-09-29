@@ -95,27 +95,24 @@ class Cro_Booster_Header_Promotional_Bar {
 		
 		$fields[] = array(
             'name'   => 'header-promotional-bar',
-            'title'  => 'Header Promotional Bar',
-            'icon'   => 'fa fa-bars',
+            'title'  => __('Header Promotional Bar', "cro-booster"),
             'fields' => array(
 
             	array(
                     'id'      => 'hpb_switcher',
                     'type'    => 'switcher',
-                    'title'   => 'Enable/disable',
-                    'label'   => 'Enable this option to display Promotional Bar into the header',
-                    'default' => 'yes',
+                    'title'   => __('Enable/Disable', "cro-booster"),
+                    'label'   => __('Enable this option to display Header Promotional Bar', "cro-booster"),
                 ),
 
             	array(
                     'id'          => 'hpb_message',
                     'type'        => 'text',
-                    'title'       => 'Promotional Bar Message',
+                    'title'       => __('Promotional Bar Message', "cro-booster"),
                     'class'       => 'text-class',
-                    'default'     => 'Default Text',
+                    'default'     => 'Free Shipping on all orders over $100',
                     'attributes'    => array(
-                       'placeholder' => 'Enter your promotional bar message'
-
+                       'placeholder' => __('Enter your promotional bar message', "cro-booster")
                     ),
                     'sanitize'    => array( $this, 'test_sanitize_callback' ),
 
@@ -124,15 +121,18 @@ class Cro_Booster_Header_Promotional_Bar {
                 array(
                     'id'     => 'hpb_bg_color',
                     'type'   => 'color_wp',
-                    'title'  => 'Promotional Bar Background Color',
+                    'title'  => __('Promotional Bar Background Color', "cro-booster"),
                     'rgba'   => true,
+                    'default'=> '#000000',
+
                 ),
 
                 array(
                     'id'     => 'hpb_text_color',
                     'type'   => 'color_wp',
-                    'title'  => 'Promotional Bar Text Color',
+                    'title'  => __('Promotional Bar Text Color', "cro-booster"),
                     'rgba'   => true,
+                    'default'=> '#ffffff',
                 ),
 
             ),
@@ -163,7 +163,7 @@ class Cro_Booster_Header_Promotional_Bar {
 		
 		?>
 		<div class="cro-booster-hpb">
-			<div class="cro-inside"><?php _e( $this->cro_options['hpb_message'] );?></div>
+			<div class="cro-inside"><?php _e( $this->cro_options['hpb_message'], "cro-booster" );?></div>
 		</div>
 		<?php
 
@@ -190,8 +190,10 @@ class Cro_Booster_Header_Promotional_Bar {
 		?>
 			.cro-booster-hpb{
 				text-align:center;
-			    color: <?php _e($this->cro_options['hpb_text_color']);?>;
-			    background-color: <?php _e($this->cro_options['hpb_bg_color']);?>
+				font-size: 17px;
+				padding: 5px 0;
+			    color: <?php _e($this->cro_options['hpb_text_color'], "cro-booster");?>;
+			    background-color: <?php _e($this->cro_options['hpb_bg_color'], "cro-booster");?>
 			}
 		<?php
 

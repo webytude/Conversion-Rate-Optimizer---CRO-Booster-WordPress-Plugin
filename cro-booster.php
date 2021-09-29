@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       CRO Booster
  * Plugin URI:        http://webytude.com/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       CRO Booster plugin helps with several conversion rate optimization tactics that helps to increase more sales/ leads on the website.
  * Version:           1.0.0
  * Author:            Webytude
  * Author URI:        http://webytude.com/

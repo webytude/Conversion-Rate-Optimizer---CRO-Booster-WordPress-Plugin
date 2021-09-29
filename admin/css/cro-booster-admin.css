@@ -2,3 +2,36 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+
+.checkbox__switch{
+    width: 4em;
+    border-color: #c1c1c1;
+    background-color: #c1c1c1;
+}
+.checkbox__switch:after{
+    -webkit-transition: all 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: all 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);  
+}
+.checkbox__input:checked+.checkbox__switch:after{
+    left: 2em;
+}
+.checkbox__input:checked+.checkbox__switch{
+    background-color: #58b26d;
+    border-color: #58b26d;
+}
+.wp-core-ui .cro-booster-options .button-primary[disabled],
+.wp-core-ui .cro-booster-options .button-primary:disabled,
+.wp-core-ui .cro-booster-options .button-primary-disabled,
+.wp-core-ui .cro-booster-options .button-primary.disabled{
+    color: #4a4a4a !important;
+}
+
+.cro-booster-options .exopite-sof-header h1{
+    vertical-align: super;
+}
+.exopite-sof-content-nav .exopite-sof-section-header{
+    background-color: #2c3f4d;
+}
+.exopite-sof-search-wrapper::after{
+    top:5px;
+}

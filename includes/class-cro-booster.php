@@ -193,8 +193,8 @@ class Cro_Booster {
 
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'create_menu', 0 );
 		
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles', 20 );
+		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts', 20 );
 
 	}
 

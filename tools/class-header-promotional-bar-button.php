@@ -95,24 +95,22 @@ class Cro_Booster_Header_Promotional_Bar_With_Button {
 		
 		$fields[] = array(
             'name'   => 'header-promotional-bar-with-button',
-            'title'  => 'Header Promotional Bar With Button',
-            'icon'   => 'fa fa-bars',
+            'title'  => __('Header Promotional Bar With CTA Button', "cro-booster"),
             'fields' => array(
 
             	array(
                     'id'      => 'hpbwb_switcher',
                     'type'    => 'switcher',
-                    'title'   => 'Enable/disable',
-                    'label'   => 'Enable this option to display Promotional Bar into the header',
-                    'default' => 'yes',
+                    'title'   => __('Enable/Disable', "cro-booster"),
+                    'label'   => __('Enable this option to display Header Promotional Bar With CTA Button', "cro-booster"),
                 ),
 
             	array(
                     'id'          => 'hpbwb_message',
                     'type'        => 'text',
-                    'title'       => 'Promotional Bar Message',
+                    'title'       => __('Promotional Bar Message', "cro-booster"),
                     'class'       => 'text-class',
-                    'default'     => 'Default Text',
+                    'default'     => 'Black Friday BIG Sale Today | 80% Off - Unlimited Deals On Mobile & More',
                     'attributes'    => array(
                        'placeholder' => 'Enter your promotional bar message'
 
@@ -124,23 +122,25 @@ class Cro_Booster_Header_Promotional_Bar_With_Button {
                 array(
                     'id'     => 'hpbwb_bg_color',
                     'type'   => 'color_wp',
-                    'title'  => 'Promotional Bar Background Color',
+                    'title'  => __('Promotional Bar Background Color', "cro-booster"),
                     'rgba'   => true,
+                    'default'=> '#dd3333',
                 ),
 
                 array(
                     'id'     => 'hpbwb_text_color',
                     'type'   => 'color_wp',
-                    'title'  => 'Promotional Bar Text Color',
+                    'title'  => __('Promotional Bar Text Color', "cro-booster"),
                     'rgba'   => true,
+                    'default'=> '#ffffff',
                 ),
 
                 array(
                     'id'          => 'hpbwb_btn_name',
                     'type'        => 'text',
-                    'title'       => 'Button Name',
+                    'title'       => __('Button Name', "cro-booster"),
                     'class'       => 'text-class',
-                    'default'     => 'Get Now',
+                    'default'     => 'Buy Now',
                     'attributes'    => array(
                        'placeholder' => 'Enter your promotional button name'
 
@@ -152,35 +152,39 @@ class Cro_Booster_Header_Promotional_Bar_With_Button {
                 array(
                     'id'     => 'hpbwb_btn_bg_color',
                     'type'   => 'color_wp',
-                    'title'  => 'Promotional Bar Button Background Color',
+                    'title'  => __('Promotional Bar Button Background Color', "cro-booster"),
                     'rgba'   => true,
+                    'default'=> '#000000',
                 ),
 
                 array(
                     'id'     => 'hpbwb_btn_text_color',
                     'type'   => 'color_wp',
-                    'title'  => 'Promotional Bar Button Text Color',
+                    'title'  => __('Promotional Bar Button Text Color', "cro-booster"),
                     'rgba'   => true,
+                    'default'=> '#ffffff',
                 ),
 
                 array(
                     'id'     => 'hpbwb_hover_btn_bg_color',
                     'type'   => 'color_wp',
-                    'title'  => 'Promotional Bar Hover Button Background Color',
+                    'title'  => __('Promotional Bar Hover Button Background Color', "cro-booster"),
                     'rgba'   => true,
+                    'default'=> '#ffffff',
                 ),
 
                 array(
                     'id'     => 'hpbwb_hover_btn_text_color',
                     'type'   => 'color_wp',
-                    'title'  => 'Promotional Bar Hover Button Text Color',
+                    'title'  => __('Promotional Bar Hover Button Text Color', "cro-booster"),
                     'rgba'   => true,
+                    'default'=> '#dd3333',
                 ),
 
                 array(
                     'id'          => 'hpbwb_btn_url',
                     'type'        => 'text',
-                    'title'       => 'Button URL',
+                    'title'       => __('Button URL', "cro-booster"),
                     'class'       => 'text-class',
                     'attributes'    => array(
                        'placeholder' => 'Enter your promotional button URL'
@@ -221,7 +225,7 @@ class Cro_Booster_Header_Promotional_Bar_With_Button {
         <div class="cro-booster-hpbwb">
             <div class="cro-inside">
                 <?php 
-                _e( $this->cro_options['hpbwb_message'] );
+                _e( $this->cro_options['hpbwb_message'], "cro-booster" );
 
                 if( !empty( $this->cro_options['hpbwb_btn_name'] ) && !empty( $this->cro_options['hpbwb_btn_url'] ) ) {
 
@@ -261,24 +265,28 @@ class Cro_Booster_Header_Promotional_Bar_With_Button {
         ?>
             .cro-booster-hpbwb{
                 text-align:center;
-                color: <?php _e($this->cro_options['hpbwb_text_color']);?>;
-                background-color: <?php _e($this->cro_options['hpbwb_bg_color']);?>
+                font-size: 17px;
+                padding: 5px 0;
+                color: <?php _e($this->cro_options['hpbwb_text_color'], "cro-booster");?>;
+                background-color: <?php _e($this->cro_options['hpbwb_bg_color'], "cro-booster");?>
             }
             .cro-booster-hpbwb .hpbwb-btn{
                 margin-left: 10px;
                 text-decoration: none;
-                padding: 5px 30px;
+                padding: 5px 15px;
                 display: inline-block;
+                border-radius: 3px;
+                font-weight: bold;
                 
                 transition: all 0.3s;
 
-                color: <?php _e($this->cro_options['hpbwb_btn_text_color']);?>;
-                background-color: <?php _e($this->cro_options['hpbwb_btn_bg_color']);?>
+                color: <?php _e($this->cro_options['hpbwb_btn_text_color'], "cro-booster");?>;
+                background-color: <?php _e($this->cro_options['hpbwb_btn_bg_color'], "cro-booster");?>
             }
             .cro-booster-hpbwb .hpbwb-btn:hover,
             .cro-booster-hpbwb .hpbwb-btn:focus{
-                color: <?php _e($this->cro_options['hpbwb_hover_btn_text_color']);?>;
-                background-color: <?php _e($this->cro_options['hpbwb_hover_btn_bg_color']);?>
+                color: <?php _e($this->cro_options['hpbwb_hover_btn_text_color'], "cro-booster");?>;
+                background-color: <?php _e($this->cro_options['hpbwb_hover_btn_bg_color'], "cro-booster");?>
             }
         <?php
 
