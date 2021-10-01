@@ -1,4 +1,4 @@
-=== CRO Booster ===
+=== CRO Booster - Conversion Rate Optimization Pack ===
 Donate link: https://www.paypal.com/paypalme/raviradadiya
 Tags: promotion bar, welcome bar, hello bar, notification bar, header bar, offer bar
 Requires at least: 4.9
@@ -37,3 +37,8 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 = 1.0 =
 * Initial Release
+
+
+== Credit ==
+Countdown Timer
+https://github.com/VincentLoy/simplyCountdown.js

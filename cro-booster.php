@@ -13,7 +13,7 @@
  * @package           Cro_Booster
  *
  * @wordpress-plugin
- * Plugin Name:       CRO Booster
+ * Plugin Name:       CRO Booster - Conversion Rate Optimization Pack
  * Plugin URI:        http://webytude.com/
  * Description:       CRO Booster plugin helps with several conversion rate optimization tactics that helps to increase more sales/ leads on the website.
  * Version:           1.0.0

@@ -47,10 +47,10 @@ if ( ! class_exists( 'Exopite_Simple_Options_Framework_Field_editor' ) ) {
 					// replace the default fullscreen with DFW (supported on the front-end in WordPress 3.4)
 					'tinymce'       => true,
 					// load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
-					'quicktags'     => true
+					'quicktags'     => true,
 					// load Quicktags, can be used to pass settings directly to Quicktags using an array()
+					'media_buttons'=> false,
 				);
-
 				wp_editor( $this->element_value(), $this->field['id'], $args );
 
 			}

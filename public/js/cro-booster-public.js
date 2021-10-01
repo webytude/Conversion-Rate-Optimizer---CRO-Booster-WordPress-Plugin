@@ -29,4 +29,28 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
+	if ( jQuery().simplyCountdown ) {
+		if( cro_booster_object.hpbwc_date !== undefined && cro_booster_object.hpbwc_time !== undefined){
+				var data = cro_booster_object.hpbwc_date +" "+ cro_booster_object.hpbwc_time;
+				var d = new Date(data);
+				var dc = new Date();
+				simplyCountdown('.cro-countdown', {
+		            enableUtc: true,
+		            year: d.getFullYear(),
+		            month: d.getMonth() + 1,
+		            day: d.getDate(),
+		            hours: d.getHours(),
+		            minutes: d.getMinutes(),
+		            seconds: d.getSeconds(),
+		            zeroPad: true,
+		            words: { //words displayed into the countdown
+		                days: { singular: 'Day', plural: 'Days' },
+		                hours: { singular: 'Hr', plural: 'Hr' },
+		                minutes: { singular: 'Min', plural: 'Min' },
+		                seconds: { singular: 'Sec', plural: 'Sec' }
+		            },
+		        });
+        }
+    }
+
 })( jQuery );

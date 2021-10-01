@@ -107,21 +107,16 @@ class Cro_Booster_Header_Promotional_Bar {
 
             	array(
                     'id'          => 'hpb_message',
-                    'type'        => 'text',
-                    'title'       => __('Promotional Bar Message', "cro-booster"),
+                    'type'        => 'editor',
+                    'title'       => __('Message', "cro-booster"),
                     'class'       => 'text-class',
-                    'default'     => 'Free Shipping on all orders over $100',
-                    'attributes'    => array(
-                       'placeholder' => __('Enter your promotional bar message', "cro-booster")
-                    ),
-                    'sanitize'    => array( $this, 'test_sanitize_callback' ),
-
+                    'default'     => 'Free Shipping on all orders over <strong>$100</strong>',
                 ), 
 
                 array(
                     'id'     => 'hpb_bg_color',
                     'type'   => 'color_wp',
-                    'title'  => __('Promotional Bar Background Color', "cro-booster"),
+                    'title'  => __('Background Color', "cro-booster"),
                     'rgba'   => true,
                     'default'=> '#000000',
 
@@ -130,7 +125,7 @@ class Cro_Booster_Header_Promotional_Bar {
                 array(
                     'id'     => 'hpb_text_color',
                     'type'   => 'color_wp',
-                    'title'  => __('Promotional Bar Text Color', "cro-booster"),
+                    'title'  => __('Text Color', "cro-booster"),
                     'rgba'   => true,
                     'default'=> '#ffffff',
                 ),

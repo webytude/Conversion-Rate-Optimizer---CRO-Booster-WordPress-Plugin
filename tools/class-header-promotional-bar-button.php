@@ -107,22 +107,16 @@ class Cro_Booster_Header_Promotional_Bar_With_Button {
 
             	array(
                     'id'          => 'hpbwb_message',
-                    'type'        => 'text',
-                    'title'       => __('Promotional Bar Message', "cro-booster"),
+                    'type'        => 'editor',
+                    'title'       => __('Message', "cro-booster"),
                     'class'       => 'text-class',
-                    'default'     => 'Black Friday BIG Sale Today | 80% Off - Unlimited Deals On Mobile & More',
-                    'attributes'    => array(
-                       'placeholder' => 'Enter your promotional bar message'
-
-                    ),
-                    'sanitize'    => array( $this, 'test_sanitize_callback' ),
-
+                    'default'     => 'Black Friday BIG Sale Today | <strong>80% Off</strong> - Unlimited Deals On Mobile &amp; More',
                 ), 
 
                 array(
                     'id'     => 'hpbwb_bg_color',
                     'type'   => 'color_wp',
-                    'title'  => __('Promotional Bar Background Color', "cro-booster"),
+                    'title'  => __('Background Color', "cro-booster"),
                     'rgba'   => true,
                     'default'=> '#dd3333',
                 ),
@@ -130,7 +124,7 @@ class Cro_Booster_Header_Promotional_Bar_With_Button {
                 array(
                     'id'     => 'hpbwb_text_color',
                     'type'   => 'color_wp',
-                    'title'  => __('Promotional Bar Text Color', "cro-booster"),
+                    'title'  => __('Text Color', "cro-booster"),
                     'rgba'   => true,
                     'default'=> '#ffffff',
                 ),
@@ -152,7 +146,7 @@ class Cro_Booster_Header_Promotional_Bar_With_Button {
                 array(
                     'id'     => 'hpbwb_btn_bg_color',
                     'type'   => 'color_wp',
-                    'title'  => __('Promotional Bar Button Background Color', "cro-booster"),
+                    'title'  => __('Button Background Color', "cro-booster"),
                     'rgba'   => true,
                     'default'=> '#000000',
                 ),
@@ -160,7 +154,7 @@ class Cro_Booster_Header_Promotional_Bar_With_Button {
                 array(
                     'id'     => 'hpbwb_btn_text_color',
                     'type'   => 'color_wp',
-                    'title'  => __('Promotional Bar Button Text Color', "cro-booster"),
+                    'title'  => __('Button Text Color', "cro-booster"),
                     'rgba'   => true,
                     'default'=> '#ffffff',
                 ),
@@ -168,7 +162,7 @@ class Cro_Booster_Header_Promotional_Bar_With_Button {
                 array(
                     'id'     => 'hpbwb_hover_btn_bg_color',
                     'type'   => 'color_wp',
-                    'title'  => __('Promotional Bar Hover Button Background Color', "cro-booster"),
+                    'title'  => __('Button Hover Background Color', "cro-booster"),
                     'rgba'   => true,
                     'default'=> '#ffffff',
                 ),
@@ -176,7 +170,7 @@ class Cro_Booster_Header_Promotional_Bar_With_Button {
                 array(
                     'id'     => 'hpbwb_hover_btn_text_color',
                     'type'   => 'color_wp',
-                    'title'  => __('Promotional Bar Hover Button Text Color', "cro-booster"),
+                    'title'  => __('Button Hover Text Color', "cro-booster"),
                     'rgba'   => true,
                     'default'=> '#dd3333',
                 ),
@@ -186,10 +180,11 @@ class Cro_Booster_Header_Promotional_Bar_With_Button {
                     'type'        => 'text',
                     'title'       => __('Button URL', "cro-booster"),
                     'class'       => 'text-class',
-                    'attributes'    => array(
+                    'attributes'  => array(
                        'placeholder' => 'Enter your promotional button URL'
 
                     ),
+                    'default'     => esc_url( site_url() ),
                     'sanitize'    => array( $this, 'test_sanitize_callback' ),
 
                 ),

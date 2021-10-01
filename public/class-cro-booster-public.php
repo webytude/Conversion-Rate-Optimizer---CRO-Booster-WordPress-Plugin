@@ -40,16 +40,26 @@ class Cro_Booster_Public {
 	private $version;
 
 	/**
+	 * The saved options of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $cro_options    The saved options of this plugin.
+	 */
+	private $cro_options;
+
+	/**
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
 	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	public function __construct( $plugin_name, $version, $cro_options ) {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+		$this->cro_options = $cro_options;
 
 	}
 
@@ -94,8 +104,20 @@ class Cro_Booster_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+		wp_register_script( $this->plugin_name . '-countdown', plugin_dir_url( __FILE__ ) . 'js/simplyCountdown.js', array( 'jquery' ), $this->version, false );
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/cro-booster-public.js', array( 'jquery' ), $this->version, false );
+		wp_register_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/cro-booster-public.js', array( 'jquery' ), $this->version, false );
+
+		if( !empty( $this->cro_options['hpbwc_date'] ) && !empty( $this->cro_options['hpbwc_time'] ) ) {
+			wp_localize_script($this->plugin_name, 'cro_booster_object',
+	            array( 
+	                'hpbwc_date' => $this->cro_options['hpbwc_date'],
+	                'hpbwc_time' => $this->cro_options['hpbwc_time'],
+	            )
+	        );
+		}
+
+
 
 	}
 
