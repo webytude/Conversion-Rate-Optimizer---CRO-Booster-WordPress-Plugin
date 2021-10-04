@@ -161,6 +161,11 @@ class Cro_Booster {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'tools/class-header-promotional-bar-countdown.php';
 
+		/**
+		 * The class responsible for defining all actions that occur in the header top bar
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'tools/class-header-top-bar.php';
+
 
 
 		$this->loader = new Cro_Booster_Loader();

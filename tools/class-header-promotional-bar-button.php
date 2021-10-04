@@ -220,7 +220,7 @@ class Cro_Booster_Header_Promotional_Bar_With_Button {
         <div class="cro-booster-hpbwb">
             <div class="cro-inside">
                 <?php 
-                _e( $this->cro_options['hpbwb_message'], "cro-booster" );
+                _e( wp_kses_post($this->cro_options['hpbwb_message']), "cro-booster" );
 
                 if( !empty( $this->cro_options['hpbwb_btn_name'] ) && !empty( $this->cro_options['hpbwb_btn_url'] ) ) {
 

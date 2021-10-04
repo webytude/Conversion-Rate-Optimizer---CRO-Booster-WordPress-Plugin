@@ -158,7 +158,7 @@ class Cro_Booster_Header_Promotional_Bar {
 		
 		?>
 		<div class="cro-booster-hpb">
-			<div class="cro-inside"><?php _e( $this->cro_options['hpb_message'], "cro-booster" );?></div>
+			<div class="cro-inside"><?php _e( wp_kses_post($this->cro_options['hpb_message']), "cro-booster" );?></div>
 		</div>
 		<?php
 

@@ -91,6 +91,10 @@ class Cro_Booster_Admin {
     public function test_sanitize_callback( $val ) {
         return str_replace ( 'a', 'b', $val );
     }
+
+    public function email_sanitize_callback( $val ) {
+        return sanitize_email ( $val );
+    }
     
 	/**
 	 * Register the stylesheets for the admin area.

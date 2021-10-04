@@ -101,7 +101,7 @@ class Cro_Booster_Header_Promotional_Bar_With_Countdown {
                     'id'      => 'hpbwc_switcher',
                     'type'    => 'switcher',
                     'title'   => __('Enable/Disable', "cro-booster"),
-                    'label'   => __('Enable this option to display Header Promotional Bar With CTA Button', "cro-booster"),
+                    'label'   => __('Enable this option to display Header Promotional Bar With Urgency Creation Countdown Time', "cro-booster"),
                 ),
 
                 array(
@@ -373,6 +373,11 @@ class Cro_Booster_Header_Promotional_Bar_With_Countdown {
             }
             .cro-booster-hpbwc .hpbwc-link-message a{
                 color: <?php _e($this->cro_options['hpbwc_link_message_color'], "cro-booster");?>;
+            }
+            @media only screen and (max-width: 767px) {
+                .cro-booster-hpbwc .cro-inside{
+                    flex-direction: column;
+                }
             }
         <?php
 
